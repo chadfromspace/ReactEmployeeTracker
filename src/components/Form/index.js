@@ -7,112 +7,185 @@ class Form extends Component {
        employees: [{
           firstName: "Bob",
           lastName: "Williams",
-          userID: "1",
+          userID: "2",
           email: "someEmail@someWebsite.com",
           age: "45"
        },
        {
           firstName: "Billy",
           lastName: "Bob",
-          userID: "2",
+          userID: "1",
           email: "someEmail2@someWebsite.com",
           age: "47"
-       }]
+       }],
+       input: ""
     };
 
   handleInputChange = event => {
-    // Getting the value and name of the input which triggered the change
     let value = event.target.value;
-    const name = event.target.name;
 
-    if (name === "password") {
-      value = value.substring(0, 15);
-    }
-    // Updating the input's state
     this.setState({
-      [name]: value
+      input: value
     });
   };
 
   handleFormSubmit = event => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    if (!this.state.firstName || !this.state.lastName) {
-      alert("Fill out your first and last name please!");
-    } else if (this.state.password.length < 6) {
-      alert(
-        `Choose a more secure password ${this.state.firstName} ${this.state
-          .lastName}`
-      );
-    } else {
-      alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
+    if(this.state.input===""){
+        window.location.reload();
     }
-
+    const filtered = this.state.employees.filter((a)=>{
+        return a.firstName.toLowerCase().includes(this.state.input.toLowerCase())
+        || a.lastName.toLowerCase().includes(this.state.input.toLowerCase())
+        || a.userID.toLowerCase().includes(this.state.input.toLowerCase())
+        || a.email.toLowerCase().includes(this.state.input.toLowerCase())
+        || a.age.toLowerCase().includes(this.state.input.toLowerCase());
+    });
     this.setState({
-      firstName: "",
-      lastName: "",
-      password: ""
+      employees: filtered
     });
   };
+
+sortEmployeesID = () => {
+const newRows = this.state.employees.sort(function(a, b) {
+  if(a.userID>b.userID) return a.userID - b.userID;
+  if(a.userID<b.userID) return b.userID - a.userID;
+  return 0;
+});
+  this.setState({
+  employees: newRows,
+});
+};
+
+sortEmployeesAge = () => {
+const newRows = this.state.employees.sort(function(a, b) {
+  if(a.age>b.age) return a.age - b.age;
+  if(a.age<b.age) return b.age - a.age;
+  return 0;
+});
+  this.setState({
+  employees: newRows,
+});
+};
+
+sortEmployeesFirstName = () => {
+  const newRows = this.state.employees.sort(function(a, b) {
+    var employee1 = a.firstName;
+    var employee2 = b.firstName;
+    if(employee1>employee2){
+        if (employee1 < employee2) {
+          return -1;
+        }
+        if (employee1 > employee2) {
+          return 1;
+        }
+    }
+    if(employee1<employee2){
+        if (employee1 < employee2) {
+           return 1;
+        }
+        if (employee1 > employee2) {
+           return -1;
+        }
+    }
+    return 0;
+  });
+    this.setState({
+    employees: newRows
+  });
+}
+
+sortEmployeesLastName = () => {
+  const newRows = this.state.employees.sort(function(a, b) {
+    var employee1 = a.lastName;
+    var employee2 = b.lastName;
+    if(employee1>employee2){
+        if (employee1 < employee2) {
+          return -1;
+        }
+        if (employee1 > employee2) {
+          return 1;
+        }
+    }
+    if(employee1<employee2){
+        if (employee1 < employee2) {
+           return 1;
+        }
+        if (employee1 > employee2) {
+           return -1;
+        }
+    }
+    return 0;
+  });
+    this.setState({
+    employees: newRows
+  });
+}
+
+sortEmployeesEmail = () => {
+  const newRows = this.state.employees.sort(function(a, b) {
+    var employee1 = a.email;
+    var employee2 = b.email;
+    if(employee1>employee2){
+        if (employee1 < employee2) {
+          return -1;
+        }
+        if (employee1 > employee2) {
+          return 1;
+        }
+    }
+    if(employee1<employee2){
+        if (employee1 < employee2) {
+           return 1;
+        }
+        if (employee1 > employee2) {
+           return -1;
+        }
+    }
+    return 0;
+  });
+    this.setState({
+    employees: newRows
+  });
+}
 
   render() {
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
       <div>
-        <navbar>
+        <nav>
           Employee Database
-        </navbar>
+        </nav>
         <form className="form">
           <input
             onChange={this.handleInputChange}
             type="text"
             placeholder="Search"
+            value={this.state.input}
           />
           <button onClick={this.handleFormSubmit}>Submit</button>
         </form>
          <table>
+         <thead>
           <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>UserID</th>
-            <th>Email</th>
-            <th>Age</th>
+            <th><button onClick={this.sortEmployeesFirstName}>First Name</button></th>
+            <th><button onClick={this.sortEmployeesLastName}>Last Name</button></th>
+            <th><button onClick={this.sortEmployeesID}>UserID</button></th>
+            <th><button onClick={this.sortEmployeesEmail}>Email</button></th>
+            <th><button onClick={this.sortEmployeesAge}>Age</button></th>
           </tr>
-          <tr>
-            <td>{this.state.employees[0].firstName}</td>
-            <td>{this.state.employees[0].lastName}</td>
-            <td>{this.state.employees[0].userID}</td>
-            <td>{this.state.employees[0].email}</td>
-            <td>{this.state.employees[0].age}</td>
-          </tr>
-          <tr>
-                      <td>Jill</td>
-                      <td>Smith</td>
-                      <td>1</td>
-                      <td>someemail@somewebsite.com</td>
-                      <td>50</td>
-                    </tr>
-          <tr>
-                      <td>Bob</td>
-                      <td>Williams</td>
-                      <td>1</td>
-                      <td>someemail@somewebsite.com</td>
-                      <td>50</td>
-                    </tr>
-          <tr>
-                      <td>Greg</td>
-                      <td>Jenkins</td>
-                      <td>1</td>
-                      <td>someemail@somewebsite.com</td>
-                      <td>50</td>
-                    </tr>
-          <tr>
-                      <td>David</td>
-                      <td>Smith</td>
-                      <td>1</td>
-                      <td>someemail@somewebsite.com</td>
-                      <td>50</td>
-                    </tr>
+         </thead>
+         <tbody>
+         {this.state.employees.map((a)=>(
+         <tr key={a.userID}>
+           <td>{a.firstName}</td>
+           <td>{a.lastName}</td>
+           <td>{a.userID}</td>
+           <td>{a.email}</td>
+           <td>{a.age}</td>
+         </tr>
+         ))}
+          </tbody>
         </table>
       </div>
     );
