@@ -6,11 +6,11 @@
   "age": "45"
 },
 {
-  "firstName": "Mark",
-  "lastName": "Smith",
+  "firstName": "Amy",
+  "lastName": "Smalls",
   "userID": "2",
-  "email": "billy.smith@somewebsite.com",
-  "age": "41"
+  "email": "amy.smalls@somewebsite.com",
+  "age": "47"
 },
 {
   "firstName": "John",
@@ -20,16 +20,52 @@
   "age": "42"
 },
 {
+  "firstName": "Stacy",
+  "lastName": "Fitzgerald",
+  "userID": "4",
+  "email": "stacy.fitzgerald@somewebsite.com",
+  "age": "45"
+},
+{
   "firstName": "Robert",
   "lastName": "Miller",
-  "userID": "4",
+  "userID": "5",
   "email": "robert.miller@somewebsite.com",
   "age": "47"
 },
 {
+  "firstName": "Ashley",
+  "lastName": "Gregory",
+  "userID": "6",
+  "email": "ashley.gregory@somewebsite.com",
+  "age": "44"
+},
+{
   "firstName": "Frank",
   "lastName": "Rogers",
-  "userID": "5",
+  "userID": "7",
   "email": "frank.rogers@somewebsite.com",
   "age": "49"
+},
+
+{
+  "firstName": "Lauren",
+  "lastName": "Johnson",
+  "userID": "8",
+  "email": "lauren.johnson@somewebsite.com",
+  "age": "37"
+},
+{
+  "firstName": "Mark",
+  "lastName": "Smith",
+  "userID": "9",
+  "email": "mark.smith@somewebsite.com",
+  "age": "41"
+},
+{
+  "firstName": "Kim",
+  "lastName": "Hamilton",
+  "userID": "10",
+  "email": "kim.hamilton@somewebsite.com",
+  "age": "35"
 }]

@@ -110,7 +110,7 @@ sortEmployeesEmail = () => {
   render() {
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
-      <div>
+      <div className="container">
         <nav>
           <div className="navbar-brand">Employee Database</div>
           <form className="form">
@@ -120,7 +120,7 @@ sortEmployeesEmail = () => {
               placeholder="Search"
               value={this.state.input}
             />
-            <button onClick={this.handleFormSubmit}>Submit</button>
+            <button className="searchButton" onClick={this.handleFormSubmit}>Submit</button>
           </form>
         </nav>
          <table>
@@ -129,7 +129,7 @@ sortEmployeesEmail = () => {
             <th><button className="btn btn-dark" onClick={this.sortEmployeesFirstName}>First Name</button></th>
             <th><button className="btn btn-dark" onClick={this.sortEmployeesLastName}>Last Name</button></th>
             <th><button className="btn btn-dark" onClick={this.sortEmployeesID}>UserID</button></th>
-            <th><button className="btn btn-dark" onClick={this.sortEmployeesEmail}>Email</button></th>
+            <th><button className="btn btn-dark emailButton" onClick={this.sortEmployeesEmail}>Email</button></th>
             <th><button className="btn btn-dark" onClick={this.sortEmployeesAge}>Age</button></th>
           </tr>
          </thead>

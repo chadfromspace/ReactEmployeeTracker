@@ -1,8 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Employee Tracker
+
+![Image](./public/assets/img/img.png)
+
+Github Repository: https://github.com/chadfromspace/ReactEmployeeTracker
+
+Deployed Website: https://chadfromspace.github.io/ReactEmployeeTracker
 
 ## Available Scripts
-
-In the project directory, you can run:
 
 ### `npm start`
 
