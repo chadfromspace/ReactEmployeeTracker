@@ -1,5 +1,20 @@
-.form {
-  margin: 20px;
+body{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    colot: white;
+}
+
+td {
+    color: white;
+}
+
+form{
+    display: flex;
+}
+
+.form{
+    justify-content: right;
 }
 
 .form input {
@@ -7,4 +22,15 @@
   margin-top: 5px;
   margin-bottom: 5px;
   width: 100%;
+}
+
+nav{
+    color: white;
+    display: block ruby;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.navbar-brand{
+    justify-content: left;
 }

@@ -1,0 +1,35 @@
+[{
+  "firstName": "Bob",
+  "lastName": "Michaels",
+  "userID": "1",
+  "email": "bob.williams@somewebsite.com",
+  "age": "45"
+},
+{
+  "firstName": "Mark",
+  "lastName": "Smith",
+  "userID": "2",
+  "email": "billy.smith@somewebsite.com",
+  "age": "41"
+},
+{
+  "firstName": "John",
+  "lastName": "Franklin",
+  "userID": "3",
+  "email": "john.franklin@somewebsite.com",
+  "age": "42"
+},
+{
+  "firstName": "Robert",
+  "lastName": "Miller",
+  "userID": "4",
+  "email": "robert.miller@somewebsite.com",
+  "age": "47"
+},
+{
+  "firstName": "Frank",
+  "lastName": "Rogers",
+  "userID": "5",
+  "email": "frank.rogers@somewebsite.com",
+  "age": "49"
+}]
