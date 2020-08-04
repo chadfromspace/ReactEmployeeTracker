@@ -61,11 +61,4 @@
   "userID": "9",
   "email": "mark.smith@somewebsite.com",
   "age": "41"
-},
-{
-  "firstName": "Kim",
-  "lastName": "Hamilton",
-  "userID": "10",
-  "email": "kim.hamilton@somewebsite.com",
-  "age": "35"
 }]
