@@ -8,6 +8,7 @@ state = {
    input: ""
 };
 
+//Handle input changes
 handleInputChange = event => {
     let value = event.target.value;
 
@@ -16,6 +17,7 @@ handleInputChange = event => {
     });
 };
 
+//Handle form submission
 handleFormSubmit = event => {
     event.preventDefault();
     if(this.state.input===""){
@@ -33,6 +35,7 @@ handleFormSubmit = event => {
     });
 };
 
+//Sort employees by ID
 sortEmployeesID = () => {
     const newRows = this.state.employees.sort(function(a, b) {
       if(a.userID>b.userID){
@@ -45,6 +48,7 @@ sortEmployeesID = () => {
     });
 };
 
+//Sort employees by age
 sortEmployeesAge = () => {
     const newRows = this.state.employees.sort(function(a, b) {
       if(a.age>b.age){
@@ -57,6 +61,7 @@ sortEmployeesAge = () => {
     });
 };
 
+//Sort employees by first name
 sortEmployeesFirstName = () => {
   const newRows = this.state.employees.sort(function(a, b) {
     var employee1 = a.firstName;
@@ -74,6 +79,7 @@ sortEmployeesFirstName = () => {
   });
 }
 
+//Sort employees by last name
 sortEmployeesLastName = () => {
   const newRows = this.state.employees.sort(function(a, b) {
     var employee1 = a.lastName;
@@ -91,6 +97,7 @@ sortEmployeesLastName = () => {
   });
 }
 
+//Sort employees by email
 sortEmployeesEmail = () => {
   const newRows = this.state.employees.sort(function(a, b) {
     var employee1 = a.email;
@@ -108,6 +115,7 @@ sortEmployeesEmail = () => {
   });
 }
 
+//Render content
 render() {
     return (
       <div className="container">
