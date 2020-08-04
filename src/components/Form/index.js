@@ -4,56 +4,58 @@ import db from "../../db.json";
 
 class Form extends Component {
   // Setting the component's initial state
-  state = {
-       employees: db,
-       input: ""
-    };
+state = {
+   employees: db,
+   input: ""
+};
 
-  handleInputChange = event => {
+handleInputChange = event => {
     let value = event.target.value;
 
     this.setState({
       input: value
     });
-  };
+};
 
 handleFormSubmit = event => {
-event.preventDefault();
-if(this.state.input===""){
-    window.location.reload();
-}
-const filtered = this.state.employees.filter((a)=>{
-    return a.firstName.toLowerCase().includes(this.state.input.toLowerCase())
-    || a.lastName.toLowerCase().includes(this.state.input.toLowerCase())
-    || a.userID.toLowerCase().includes(this.state.input.toLowerCase())
-    || a.email.toLowerCase().includes(this.state.input.toLowerCase())
-    || a.age.toLowerCase().includes(this.state.input.toLowerCase());
-});
-this.setState({
-  employees: filtered
-});
+    event.preventDefault();
+    if(this.state.input===""){
+        window.location.reload();
+    }
+    const filtered = this.state.employees.filter((a)=>{
+        return a.firstName.toLowerCase().includes(this.state.input.toLowerCase())
+        || a.lastName.toLowerCase().includes(this.state.input.toLowerCase())
+        || a.userID.toLowerCase().includes(this.state.input.toLowerCase())
+        || a.email.toLowerCase().includes(this.state.input.toLowerCase())
+        || a.age.toLowerCase().includes(this.state.input.toLowerCase());
+    });
+    this.setState({
+      employees: filtered
+    });
 };
 
 sortEmployeesID = () => {
-const newRows = this.state.employees.sort(function(a, b) {
-  if(a.userID>b.userID) return a.userID - b.userID;
-  return 0;
-});
-  this.setState({
-  employees: newRows,
-});
+    const newRows = this.state.employees.sort(function(a, b) {
+      if(a.userID>b.userID){
+        return a.userID - b.userID;
+      }
+      return 0;
+    });
+    this.setState({
+      employees: newRows,
+    });
 };
 
 sortEmployeesAge = () => {
-const newRows = this.state.employees.sort(function(a, b) {
-  if(a.age>b.age){
-    return a.age - b.age;
-  }
-  return 0;
-});
-  this.setState({
-  employees: newRows,
-});
+    const newRows = this.state.employees.sort(function(a, b) {
+      if(a.age>b.age){
+        return a.age - b.age;
+      }
+      return 0;
+    });
+    this.setState({
+      employees: newRows,
+    });
 };
 
 sortEmployeesFirstName = () => {
@@ -68,7 +70,7 @@ sortEmployeesFirstName = () => {
     }
     return 0;
   });
-    this.setState({
+  this.setState({
     employees: newRows
   });
 }
@@ -107,8 +109,7 @@ sortEmployeesEmail = () => {
   });
 }
 
-  render() {
-    // Notice how each input has a `value`, `name`, and `onChange` prop
+render() {
     return (
       <div className="container">
         <nav>
@@ -147,7 +148,7 @@ sortEmployeesEmail = () => {
         </table>
       </div>
     );
-  }
+}
 }
 
 export default Form;
