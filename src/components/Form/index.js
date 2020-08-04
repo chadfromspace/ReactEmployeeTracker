@@ -3,7 +3,6 @@ import "./style.css";
 import db from "../../db.json";
 
 class Form extends Component {
-  // Setting the component's initial state
 state = {
    employees: db,
    input: ""
