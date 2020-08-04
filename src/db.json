@@ -47,18 +47,10 @@
   "email": "frank.rogers@somewebsite.com",
   "age": "49"
 },
-
 {
   "firstName": "Lauren",
   "lastName": "Johnson",
   "userID": "8",
   "email": "lauren.johnson@somewebsite.com",
   "age": "37"
-},
-{
-  "firstName": "Mark",
-  "lastName": "Smith",
-  "userID": "9",
-  "email": "mark.smith@somewebsite.com",
-  "age": "41"
 }]
